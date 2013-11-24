@@ -21,5 +21,5 @@ $.fn.calendar({
         num:'the number of displayed calendar',
 });
 
-It is so simple so I don't write more words about how to use it.
+It is so simple so I don't want to write more words about how to use it.
 
