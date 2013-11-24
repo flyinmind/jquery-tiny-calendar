@@ -9,4 +9,5 @@ Support mode 'single','range' and 'multi',
 and can show more than one calendar at the same time.
 It is useful when a range selection calendar, you can show 2 calendars.
 
+Apache license 2.0, You can use it freely.
 
