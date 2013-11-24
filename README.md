@@ -11,3 +11,15 @@ It is useful when a range selection calendar, you can show 2 calendars.
 
 Apache license 2.0, You can use it freely.
 
+You can read example.htm to get all usages.
+
+$.fn.calendar({
+        target: 'the input bind to the calendar, start with #',
+        mode: 'single', /*range|single|multi*/
+        format: 'display date on the calendar title',
+        ok:'the function when selected',
+        num:'the number of displayed calendar',
+});
+
+It is so simple so I don't write more words about how to use it.
+
