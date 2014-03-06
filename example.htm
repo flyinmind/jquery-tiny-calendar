@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html style="overflow: hidden;">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="tinycal.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="tinycal.js"></script>
+<script type="text/javascript">
+function addZero(val) {
+	if(val < 10) {
+		return '0' + val;
+	}
+	return val;
+}
+
+function setRange(startId, endId, start, end) {
+	$(startId).val(start.year + '-' + addZero(start.month+1) + '-' + addZero(start.day));
+	$(endId).val(end.year + '-' + addZero(end.month+1) + '-' + addZero(end.day));
+}
+
+$(document).ready(function(){
+	$.fn.calendar({target:"#input_date_single"});
+	
+	$.fn.calendar({target:"#input_date_multi", mode:'multi'});
+	
+	$.fn.calendar({target:"#input_date_range", mode:'range'});
+	
+	$.fn.calendar({
+		target:"#input_date_range_start_end",
+		mode:'range',
+		ok:function(checked, target) {
+			setRange("#input_date_range_start", "#input_date_range_end", checked[0], checked[1]);
+			return true;
+		}
+	});
+	
+	$.fn.calendar({target:"#input_date_2calendar", mode:'range', num:2});
+});
+</script>
+</head>
+<body>
+Single selection calendar<br/>
+<input type="text" id="input_date_single"><br/><br/>
+Multi selection calendar<br/>
+<textarea id="input_date_multi" rows="3" cols="20"></textarea><br/><br/>
+Range selection calendar<br/>
+<input type="text" id="input_date_range"><br/><br/>
+Range selection calendar in start and end<br/>
+<input type="text" id="input_date_range_start">
+<input type="text" id="input_date_range_end">
+<input type="button" value="Date Range" id="input_date_range_start_end">
+<br/><br/>
+
+Range selection calendar with two calendar<br/>
+<input type="text" id="input_date_2calendar"><br/><br/>
+
+</body>
+</html>
